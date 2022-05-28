@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+  --font-ff: "Manrope", sans-serif;
+  --fs-regular: 500;
+  --fs-bold: 700;
+}
+h1,
+h3,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: var(--font-ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-Grayish-Blue);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--Desaturated-Dark-Blue);
+}
+
+.container {
+  max-width: 380px;
+  width: 90%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.hero-img img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.hero-content {
+  padding: 15px 30px 0px 30px;
+}
+
+.hero-content h1 {
+  font-size: 16px;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+.hero-content__desc {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px 20px 30px;
+  transition: all 0.4s ease-in;
+  position: relative;
+}
+.profile__info {
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+.profile__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.profile__desc h3 {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-size: 14px;
+}
+.profile__share-btn {
+  background-color: var(--Light-Grayish-Blue);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.profile__share-btn img {
+  width: 16px;
+  height: 16px;
+}
+.share-mobile {
+  display: none;
+  width: 150px;
+  align-items: center;
+  justify-content: space-between;
+}
+.share-mobile img {
+  width: 16px;
+}
+
+/* mobile view active states */
+
+.profile.active {
+  background-color: var(--Very-Dark-Grayish-Blue);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.profile__info.active {
+  display: none;
+}
+.share-mobile.active {
+  display: flex;
+}
+.profile__share-btn.active {
+  background-color: var(--Desaturated-Dark-Blue);
+}
+.profile__share-btn.active > img {
+  filter: brightness(0) invert(1);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+/* desktop view active states */
+
+.share-desktop {
+  position: absolute;
+  background: var(--Very-Dark-Grayish-Blue);
+  display: flex;
+  align-items: center;
+  transform: translate(-50%, -200%);
+  padding: 16px 37px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.226) 0px 10px 15px -3px,
+    rgba(20, 19, 19, 0.212) 0px 4px 6px -2px;
+}
+
+.share-desktop::after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  bottom: 0;
+  transform: rotate(45deg);
+  left: 50%;
+  top: 37px;
+  z-index: -1;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.social-media p {
+  color: var(--Desaturated-Dark-Blue);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.social-media img {
+  width: 21px;
+  height: 21px;
+}
+.social-media > * + * {
+  margin-left: 16px;
+}
+.social-media img:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  transform: scale(1.3);
+}
+
+/* attribution */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 30px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 340px) {
+  .social-media p {
+    display: none;
+  }
+  .social-media img {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .container {
+    display: flex;
+    max-width: 732px;
+  }
+  .hero-img img {
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    width: 287px;
+  }
+  .hero-content {
+    padding: 30px 41px 0px 41px;
+  }
+  .hero-content h1 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+  .profile {
+    padding: 0px 41px 32px 41px;
+  }
+}
